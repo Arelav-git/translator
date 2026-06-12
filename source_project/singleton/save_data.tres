@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f73e66d1967e347bb852f5b9ccc98de26ad37ced5bcc2becd2a7e8f2a0e64f36
-size 332
+[gd_resource type="Resource" script_class="SaveData" format=3 uid="uid://c6lsagy6xm0gf"]
+
+[ext_resource type="Script" uid="uid://cdbhy2njf2oro" path="res://script/save_data.gd" id="1_me0la"]
+
+[resource]
+script = ExtResource("1_me0la")
+window_rect2i = Rect2i(3960, 930, 720, 240)
+metadata/_custom_type_script = "uid://cdbhy2njf2oro"

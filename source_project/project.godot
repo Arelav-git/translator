@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e1b746df2a9ad96ebb1ed10f1adc0f8b464080ace29d37c34b4bbd6cf92bb90e
-size 783
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="translator"
+run/main_scene="uid://ou6imhocs5s3"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ErrorCanvas="*uid://hsg55i136ptt"
+Ui="*uid://dss8vm6q5yhwd"
+TranslateReqwest="*uid://cietxcjt3h621"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=240
+window/size/always_on_top=true
+
+[gui]
+
+theme/custom="uid://boa135ubs4l0g"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

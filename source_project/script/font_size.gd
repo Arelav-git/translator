@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84a4ad4d147fdef7469eed5ca37c57797796edcdbefdcb3049cb7c605ccf23d4
-size 236
+extends SpinBox
+
+func _ready() -> void:
+	var _val : int = Ui.get_data().font_size
+	set_value(_val)
+	_on_value_changed(_val)
+
+func _on_value_changed(_value: float) -> void:
+	ThemeDB.get_project_theme().set_default_font_size(int(_value))

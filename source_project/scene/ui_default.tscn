@@ -1,3 +1,74 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f57ebc8b491c67ad53d982c2ea7f55491b36959e5f20e83dde18ab655c60758
-size 3378
+[gd_scene format=3 uid="uid://pj2uvaq4xnx"]
+
+[ext_resource type="Script" uid="uid://dod3yosldmugy" path="res://script/ui.gd" id="1_trgtx"]
+[ext_resource type="Script" uid="uid://jc86srayh8id" path="res://script/font_size.gd" id="2_3qw6j"]
+[ext_resource type="PackedScene" uid="uid://c6y3nwbtkbt8e" path="res://scene/text_action.tscn" id="3_vgxpn"]
+
+[sub_resource type="GDScript" id="GDScript_s2f8l"]
+script/source = "extends CheckBox
+
+func _on_button_up() -> void:
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_ALWAYS_ON_TOP, is_pressed() )
+"
+
+[node name="ui" type="CanvasLayer" unique_id=199173894]
+script = ExtResource("1_trgtx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=708800150]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1528483569]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1878595428]
+layout_mode = 2
+text = "Размер шрифта"
+
+[node name="font_size" type="SpinBox" parent="VBoxContainer/HBoxContainer2" unique_id=802807193]
+layout_mode = 2
+size_flags_horizontal = 8
+rounded = true
+allow_greater = true
+script = ExtResource("2_3qw6j")
+
+[node name="always_on_top" type="CheckBox" parent="VBoxContainer/HBoxContainer2" unique_id=1103441671]
+layout_mode = 2
+size_flags_horizontal = 10
+button_pressed = true
+text = "Всегда сверху"
+script = SubResource("GDScript_s2f8l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=51925197]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="text_action" parent="VBoxContainer/HBoxContainer" unique_id=910245893 instance=ExtResource("3_vgxpn")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="language" parent="VBoxContainer/HBoxContainer/text_action/VBoxContainer/HBoxContainer2" parent_id_path=PackedInt32Array(910245893, 1485112445) index="0" unique_id=1154659016]
+text = "ru"
+
+[node name="text" parent="VBoxContainer/HBoxContainer/text_action/VBoxContainer" parent_id_path=PackedInt32Array(910245893, 1052281784) index="1" unique_id=680760957 node_paths=PackedStringArray("translate_to")]
+translate_to = NodePath("../../../text_action2/VBoxContainer/text")
+
+[node name="text_action2" parent="VBoxContainer/HBoxContainer" unique_id=250882501 instance=ExtResource("3_vgxpn")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="language" parent="VBoxContainer/HBoxContainer/text_action2/VBoxContainer/HBoxContainer2" parent_id_path=PackedInt32Array(250882501, 1485112445) index="0" unique_id=1154659016]
+text = "en"
+
+[node name="text" parent="VBoxContainer/HBoxContainer/text_action2/VBoxContainer" parent_id_path=PackedInt32Array(250882501, 1052281784) index="1" unique_id=680760957 node_paths=PackedStringArray("translate_to")]
+translate_to = NodePath("../../../text_action/VBoxContainer/text")
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/font_size" to="VBoxContainer/HBoxContainer2/font_size" method="_on_value_changed"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/always_on_top" to="VBoxContainer/HBoxContainer2/always_on_top" method="_on_button_up"]
+
+[editable path="VBoxContainer/HBoxContainer/text_action"]
+[editable path="VBoxContainer/HBoxContainer/text_action2"]

@@ -1,3 +1,69 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:836f3315fa80b391f8581b5325756a78ef994c51905c344861f986503687b561
-size 2767
+[gd_scene format=3 uid="uid://c6y3nwbtkbt8e"]
+
+[ext_resource type="Texture2D" uid="uid://b64ra5l6iejic" path="res://icon/copy.png" id="1_i3l0c"]
+[ext_resource type="Script" uid="uid://fxg58f8dvkiq" path="res://script/text.gd" id="1_x437n"]
+[ext_resource type="Texture2D" uid="uid://t1h6fdfjqq68" path="res://icon/clipboard-pen.png" id="2_ovps4"]
+[ext_resource type="Texture2D" uid="uid://cubp1lh33uood" path="res://icon/send.png" id="3_e3nv3"]
+[ext_resource type="Texture2D" uid="uid://bik7t2sgotq0m" path="res://icon/x.png" id="5_ehmrq"]
+
+[node name="text_action" type="Control" unique_id=910245893]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1052281784]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1485112445]
+layout_mode = 2
+alignment = 1
+
+[node name="language" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1154659016]
+unique_name_in_owner = true
+layout_mode = 2
+text = "язык"
+
+[node name="copy" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=240527652]
+layout_mode = 2
+icon = ExtResource("1_i3l0c")
+
+[node name="paste" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1663748562]
+layout_mode = 2
+icon = ExtResource("2_ovps4")
+
+[node name="send" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1202081270]
+layout_mode = 2
+icon = ExtResource("3_e3nv3")
+
+[node name="text" type="TextEdit" parent="VBoxContainer" unique_id=680760957]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+wrap_mode = 1
+script = ExtResource("1_x437n")
+
+[node name="clean" type="Button" parent="VBoxContainer/text" unique_id=39007916]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+icon = ExtResource("5_ehmrq")
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/copy" to="VBoxContainer/text" method="_on_copy_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/paste" to="VBoxContainer/text" method="_on_paste_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/send" to="VBoxContainer/text" method="translate"]
+[connection signal="focus_entered" from="VBoxContainer/text" to="VBoxContainer/text" method="_on_focus_entered"]
+[connection signal="text_changed" from="VBoxContainer/text" to="VBoxContainer/text" method="_on_text_changed"]
+[connection signal="button_up" from="VBoxContainer/text/clean" to="VBoxContainer/text" method="_on_clean_button_up"]

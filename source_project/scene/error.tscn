@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:764f954cd55415308096c63e077099e861effabbb3f97a4763385b81c9e6e7fd
-size 1177
+[gd_scene format=3 uid="uid://biagmib2dnlhm"]
+
+[ext_resource type="Script" uid="uid://bn2foaxhunf3j" path="res://script/error.gd" id="1_vkwl0"]
+
+[sub_resource type="GDScript" id="GDScript_vkwl0"]
+script/source = "extends Button
+
+func _ready() -> void:
+	grab_focus()
+"
+
+[node name="error" type="ColorRect" unique_id=2134017641]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+script = ExtResource("1_vkwl0")
+
+[node name="text" type="Label" parent="." unique_id=710222958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=225727093]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.5
+offset_top = -31.0
+offset_right = 92.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Принять и смириться."
+script = SubResource("GDScript_vkwl0")
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

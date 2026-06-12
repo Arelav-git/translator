@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40b70014bfc600830bcaf256c1db4f4c9ee1a0525c6be921adc06c97af61e0a3
-size 218
+class_name SaveData
+extends Resource
+
+@export var version : int = 1
+@export var window_rect2i : Rect2i = Rect2i(Vector2i(0,0),Vector2i(720,480))
+@export var font_size : int = 20
+@export var always_on_top : bool = true

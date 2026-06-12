@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11fea67365286a34849635ba69257905dc565f6a617e45f865e56e8e1d446eeb
-size 124
+[gd_scene format=3 uid="uid://hsg55i136ptt"]
+
+[node name="error_canvas" type="CanvasLayer" unique_id=1411459478]
+layer = 10
