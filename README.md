@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:357ae7b6a5c6cb6e22b010602381e034e1fb61b00be048bb8182ecdb6be95256
-size 511
+простенький переводчик ру <-> англ,сделан для личного использования что бы не табаться туда-сюда
+
+<img width="792" height="278" alt="{FF009927-806C-44D2-93D0-D625814281EC}" src="https://github.com/user-attachments/assets/b9a59b4a-7797-4f32-998f-bc7a0cfdc0f2" />
+
+установка:  
+скачайте и распакуйте архив со страницы релизов translator.zip  
+готово
+
