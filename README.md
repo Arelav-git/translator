@@ -1,6 +1,6 @@
 простенький переводчик ру <-> англ,сделан для личного использования что бы не табаться туда-сюда
 
-<img width="792" height="278" alt="{FF009927-806C-44D2-93D0-D625814281EC}" src="https://github.com/user-attachments/assets/b9a59b4a-7797-4f32-998f-bc7a0cfdc0f2" />
+<img width="718" height="233" alt="{B419BE34-613F-4963-99F8-56DCB6863967}" src="https://github.com/user-attachments/assets/ae82dae5-fd3f-41a1-8692-c0dab8316612" />
 
 установка:  
 скачайте и распакуйте архив со страницы релизов translator.zip  
